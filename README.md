@@ -1,4 +1,4 @@
-# My-Linux-Configs
+# My Linux Configs
 
 This is my config files for different apps. This repo is mostly for me, but if you find something for yourself feel free to get it.
 
