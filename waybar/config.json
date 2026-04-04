@@ -1,0 +1,130 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+
+  /* === Modules Order === */
+  "modules-left": [
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "temperature"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "bluetooth",
+    "hyprland/language",
+    "pulseaudio/slider",
+    "pulseaudio",
+    "network",
+    "custom/exit"
+  ],
+
+  /* === Modules Left === */
+  "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": "  "
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "DP-3": [1, 3, 5, 7, 9],
+        "DP-4": [2, 4, 6, 8, 10],
+        "HDMI-A-5": [11]
+      },
+    "disable-scroll": true,
+    "show-special": true
+  },
+
+  "cpu": {
+    "format": "{usage}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "Usage of CPU: {usage}%\nCores: {cores}"
+  },
+  "memory": {
+    "format": "{}% ",
+    "tooltip": true,
+    "tooltip-format": "RAM used: {used} / {total} ({percentage}%)"
+  },
+  "temperature": {
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    "input-filename": "temp1_input",
+    "interval": 5,
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Temperature: {temperatureC}°C",
+    "format-icons": [
+      ""
+    ]
+  },
+
+  /* === Modules Center === */
+  "clock": {
+    "format": "{:%H:%M     %d.%m.%Y}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
+  },
+
+   /* === Modules Right === */
+  "pulseaudio/slider": {
+    "format": "{volume}%",
+    "format-muted": " MUTE",
+    "step": 5,
+    "tooltip": false
+  },
+  "bluetooth": {
+  	"format": " ",
+	"format-connected": " {device_alias}",
+   	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+   	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+   	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+   	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+   	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "kitty bluetuith"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "hyprland/language": {
+    "format": "{} ",
+    "format-ru": "RU",
+    "format-en": "ENG"
+  },
+  "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+  "tray": {
+        "spacing": 10
+    }
+}

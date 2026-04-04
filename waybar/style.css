@@ -1,0 +1,160 @@
+/* -- Global rules -- */
+* {
+  border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  min-height: 4px;
+}
+
+window#waybar {
+  background: rgba(34, 36, 54, 0);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* - Genera rules for visible modules -- */
+#clock,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#pulseaudio-slider,
+#network,
+#bluetooth,
+#custom-exit,
+#language {
+  color: rgba(255,255,255,1);
+  margin-top: 6px;
+  margin-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: none;
+}
+
+/* Separation to the left */
+#cpu,
+#bluetooth {
+  margin-right: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-bottom: 2px;
+}
+
+/* Separation to the rigth */
+#custom-exit,
+#temperature {
+  margin-right: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 2px;
+}
+
+/* Separation from both sides */ 
+#tray,
+#clock {
+  margin-right: 10px;
+  margin-left: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 2px;
+}
+/* -- Specific styles -- */
+
+/* Modules left */
+#clock {
+  background: rgba(56,60,94,0.6);
+  font-size: 16px;
+}
+
+#cpu {
+  background: rgba(56,60,94,0.6);
+}
+
+#memory {
+  background: rgba(56,60,94,0.6);
+}
+
+#temperature {
+  background: rgba(56,60,94,0.6);
+}
+
+/* Modules center */
+#workspaces {
+  background: rgba(56,60,94,0.6);
+  border-radius: 10px;
+  margin: 6px 5px;
+  padding: 0px 6px;
+  margin-bottom: 2px;
+}
+
+#workspaces button {
+  color: rgba(255,255,255,1);
+  background: transparent;
+  padding: 4px 4px;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+#workspaces button.occupied { 
+  color: #A6E3A1; 
+} 
+#workspaces button.active { 
+  color: rgba(255,255,255,1);
+  text-shadow: 0 0 4px #ABE9B3;
+}
+
+#workspaces button:hover {
+  color: rgba(255,255,255,1);
+}
+
+#workspaces button.focused {
+  background-color: @rosewater;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+/* #workspaces button.active:hover {} */
+
+/* Modules right */
+#bluetooth {
+    background: rgba(56,60,94,0.6);
+}
+
+#pulseaudio {
+  min-width: 55px;
+  color: rgba(255,255,255,1);
+  background: rgba(56,60,94,0.6);
+}
+
+#pulseaudio-slider {
+  color: #1A1826;
+  background: rgba(56,60,94,0.6);
+  min-width: 50px;
+}
+
+#network {
+  background: rgba(56,60,94,0.6);
+  padding-right: 13px;
+}
+
+#custom-exit {
+  background: rgba(56,60,94,0.6);
+  padding-right: 13px;
+}
+
+#language {
+  background: rgba(56,60,94,0.6);
+  padding-right: 15px;
+}
+
+/* === Optional animation === */
+@keyframes blink {
+  to {
+    background-color: #BF616A;
+    color: #B5E8E0;
+  }
+}
