@@ -17,6 +17,8 @@ kitty v0.46.2
 
 waybar v0.15.0
 
+wofi v1.5.3
+
 # Installation
 Clone repo:
 ```console
@@ -41,6 +43,9 @@ cp -r nvim ~/.config
 ```
 ```console
 cp -r waybar ~/.config
+```
+```console
+cp -r wofi ~/.config
 ```
 
 # Additional configuration
