@@ -14,7 +14,7 @@ return {
 
   {
       {
-      "willamboman/mason.nvim",
+      "williamboman/mason.nvim",
       opts = {
         ensured_installed = {
           -- C++
